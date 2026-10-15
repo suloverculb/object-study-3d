@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f3eb" />
+    <meta name="description" content="以 Three.js 細看楊桃的五道稜脊、金黃果皮與星形切面。" />
+    <title>楊桃 — 果物研究室</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23708238' d='m16 2 4 9 10 1-8 7 3 11-9-6-9 6 3-11-8-7 10-1z'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <a class="brand" href="./" aria-label="果物研究室首頁">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="m20 4 4.5 10.5 11.4 1.2-8.5 7.8 2.5 11.2-9.9-5.9-9.9 5.9 2.5-11.2-8.5-7.8 11.4-1.2Z"/><path d="M20 4v24.8M4.1 15.7 20 28.8l15.9-13.1"/></svg>
+          <span>果物研究室<small>THE FRUIT STUDY</small></span>
+        </a>
+        <div class="header-note">尋常果物，不尋常的形狀。</div>
+        <span class="edition">VOLUME 01 <span class="edition-dot"></span> 互動標本</span>
+      </header>
+
+      <main class="main">
+        <section class="intro" aria-labelledby="fruit-title">
+          <div class="eyebrow"><span class="tiny-line"></span> 熱帶果物 / TROPICAL FRUIT</div>
+          <h1 id="fruit-title">楊桃<span class="title-dot">。</span></h1>
+          <p class="latin">Averrhoa carambola</p>
+          <p class="description">把一束日光，摺成五道稜。<br />轉個角度，看見果實裡的星星。</p>
+          <div class="specimen"><span class="specimen-number">01</span><span>五道稜脊<br /><small>一顆天然的星形果實</small></span></div>
+          <div class="ripeness-control">
+            <div class="control-heading"><label for="ripeness">果皮熟度</label><output id="ripeness-value" for="ripeness">金黃</output></div>
+            <input type="range" id="ripeness" min="0" max="100" value="72" aria-label="調整果皮熟度" />
+            <div class="range-labels"><span>青綠</span><span>熟黃</span></div>
+          </div>
+        </section>
+
+        <section class="viewer" aria-label="可旋轉的立體楊桃">
+          <div class="viewer-heading"><span>形態觀察 <span class="slash">/</span> CARAMBOLA</span><span class="live"><i></i> LIVE 3D</span></div>
+          <div id="scene" class="scene" role="img" aria-label="金黃色五稜立體楊桃，可拖曳旋轉及滾輪縮放" tabindex="0" aria-describedby="interaction-hint">
+            <div class="loading" id="loading"><span></span> 正在準備你的果物…</div>
+          </div>
+          <div class="viewer-bottom">
+            <span class="view-caption" id="view-caption">完整果實 <span>01 / 02</span></span>
+            <span class="interaction-hint" id="interaction-hint"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 6 3-3 3 3M10 3v14M7 14l3 3 3-3M6 7l-3 3 3 3M3 10h14M14 7l3 3-3 3"/></svg><span>拖曳旋轉 · 滾輪縮放</span></span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span class="footer-note">自然的幾何，值得慢慢看。</span>
+        <div class="toolbar" aria-label="模型顯示設定">
+          <div class="view-options" role="group" aria-label="選擇觀察模式">
+            <button type="button" class="view-button active" data-view="whole" aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4c4-3 10 2 10 6 0 5-5 7-8 5S2 7 6 4Z"/><path d="M6 4c0 5 4 9 8 10M4 7c3 0 7 3 8 8"/></svg>完整果實</button>
+            <button type="button" class="view-button" data-view="slice" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 2 2.4 5 5.6.8-4 4 1 5.6-5-2.7-5 2.7 1-5.6-4-4L7.6 7Z"/></svg>星形切面</button>
+          </div>
+          <span class="toolbar-divider"></span>
+          <button type="button" id="rotate" class="icon-button" aria-label="開始自動旋轉" aria-pressed="false" title="自動旋轉"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.8 7A6.2 6.2 0 1 0 16 12M15.8 3v4h-4"/></svg><span>自動旋轉</span></button>
+          <button type="button" id="reset" class="icon-button reset-button" aria-label="重設視角" title="重設視角"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3m0 4h4M3.5 6.5A7 7 0 1 1 3 12"/></svg></button>
+        </div>
+        <span class="footer-index">FORM. COLOR. NATURE.</span>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

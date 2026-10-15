@@ -1,0 +1,4 @@
+interface:
+  display_name: "立體物件研究室"
+  short_description: "用 Three.js 製作圖鑑風格互動物品展示，讓畫面填滿視窗"
+  default_prompt: "使用 $object-study-3d，沿用圖鑑風格排版與 Three.js 技術，製作我指定物品的互動立體展示，畫面要填滿視窗。"
